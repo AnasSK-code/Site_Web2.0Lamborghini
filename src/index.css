@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mouse-x: 0deg;
+  --mouse-y: 50%;
+}
+
+/* Empêcher le débordement horizontal sur toute la page */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw; /* Force la largeur à l'écran */
+  height: 100%; /* Empêche les débordements verticaux */
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+/* Assurer qu'aucun élément ne dépasse de la largeur */
+#root, .App {
+  width: 100%; /* Empêche les débordements horizontaux */
+  overflow-x: hidden; /* Bloque le débordement horizontal */
+  max-width: 100vw; /* Assure que l'élément ne dépasse pas l'écran */
+}
+
+/* Forcer les images et médias à ne pas dépasser */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Empêcher le débordement horizontal sur mobile */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important; /* Bloque les débordements sur mobile */
+  }
+}
+
+
+
+
+
+body {
+  @apply bg-black text-white;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff3300, #ff6600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-orange-custom {
+  background-color: #ff3300;
+}
+
+.text-orange-custom {
+  color: #ff3300;
+}
+
+.hover-orange-custom:hover {
+  background-color: #ff6600;
+}
+
+/* Personnalisation de la barre de défilement */
+::-webkit-scrollbar {
+  width: 12px; /* Taille de la barre de défilement */
+  background-color: #000; /* Fond noir de la barre */
+}
+
+/* Partie de la barre de défilement qui défile */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff4d00, #ff9d53); /* Dégradé orange et blanc */
+  border-radius: 10px; /* Bords arrondis */
+  border: 3px solid #000; /* Bordure noire autour de la barre */
+}
+
+/* Lorsque la souris survole la barre de défilement */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff3300, #ff9d53); /* Changement de couleur au survol */
+}
+
+/* Personnalisation de la partie de la barre de défilement qui n'est pas encore défilée */
+::-webkit-scrollbar-track {
+  background-color: #000000; /* Fond de la piste de défilement */
+  border-radius: 10px; /* Bords arrondis */
+}
+
+
+
+
+
+
+
